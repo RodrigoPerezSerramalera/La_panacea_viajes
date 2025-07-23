@@ -3,6 +3,8 @@ const path = require('path');
 const cors = require('cors');
 const app = express();
 
+app.use('/data', express.static('data'));
+
 // Middleware para permitir acceso desde cualquier origen
 app.use(cors());
 

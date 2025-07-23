@@ -1,0 +1,15 @@
+[
+  {
+    "destino": "Machu Picchu",
+    "descripcion": "Una experiencia espiritual en las alturas del Perú.",
+    "precio": "$1.200 USD",
+    "imagen": "https://images.unsplash.com/photo-1549887534-217f5ec59c12"
+  },
+  {
+    "destino": "Islas Maldivas",
+    "descripcion": "Relajación total en playas paradisíacas.",
+    "precio": "$3.500 USD",
+    "imagen": "https://images.unsplash.com/photo-1607746882042-944635dfe10e"
+  }
+]
+

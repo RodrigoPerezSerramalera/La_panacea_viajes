@@ -90,3 +90,47 @@ body {
 .btn:hover {
   background-color: #e6c200;
 }
+
+.header-viajes {
+  padding: 2rem 3rem;
+  background: linear-gradient(to right, #6dd5fa, #2980b9);
+  color: white;
+  text-align: center;
+}
+
+.viajes-title {
+  margin-top: 1rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.viajes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.viaje-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  overflow: hidden;
+  text-align: center;
+  padding: 1rem;
+}
+
+.viaje-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.precio {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #27ae60;
+  font-size: 1.2rem;
+}
