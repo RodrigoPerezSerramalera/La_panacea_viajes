@@ -1,0 +1,99 @@
+.presentacion {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.presentacion h1 {
+    font-size: 2.5rem;
+    color: #00796b;
+}
+
+.presentacion p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-top: 10px;
+}
+
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo general */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #e0f7fa, #fffde7);
+    color: #333;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* Títulos */
+h1 {
+    text-align: center;
+    color: #00796b;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #00695c;
+    margin-top: 30px;
+    border-bottom: 2px solid #004d40;
+    padding-bottom: 5px;
+}
+
+/* Formularios */
+form {
+    background-color: #ffffffcc;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ccc;
+    max-width: 400px;
+    margin: 10px auto;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 15px;
+    border: none;
+    background-color: #00796b;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #004d40;
+}
+
+/* Secciones */
+section {
+    margin: 40px 0;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f1f8e9;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+ul {
+    padding-left: 20px;
+}
