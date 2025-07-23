@@ -1,56 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Página de Turismo</title>
-        <link rel="stylesheet" href="css/estilos.css">  <!-- Vinculación del CSS -->
-    </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La Panacea Viajes</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600;900&display=swap" rel="stylesheet">
+</head>
 <body>
-    <div class="presentacion">
-    <h1>Bienvenidos a Nuestra Página Turística</h1>
-    <p>Descubre los mejores destinos y experiencias inolvidables.</p>
-    <script src="js/main.js"></script>
-</div>
-
-
-    <!-- Sección de Login y Registro -->
-    <section id="login-registro">
-        <h2>Login y Registro</h2>
-        <form>
-            <label for="email">Correo Electrónico:</label>
-            <input type="email" id="email" name="email" required>
-            <br>
-            <label for="password">Contraseña:</label>
-            <input type="password" id="password" name="password" required>
-            <br>
-            <button type="submit">Iniciar Sesión</button>
-            <button type="button">Registrarse</button>
-        </form>
-    </section>
-
-    <!-- Sección de Próximos Viajes -->
-    <section id="proximos-viajes">
-        <h2>Próximos Viajes</h2>
-        <ul>
-            <li>Viaje a París - 20 de Mayo</li>
-            <li>Tour por Japón - 15 de Junio</li>
-            <li>Aventura en el Amazonas - 10 de Julio</li>
-        </ul>
-    </section>
-
-    <!-- Sección de Contacto -->
-    <section id="contacto">
-        <h2>Contacto</h2>
-        <form>
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required>
-            <br>
-            <label for="mensaje">Mensaje:</label>
-            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
-            <br>
-            <button type="submit">Enviar</button>
-        </form>
-    </section>
+  <header class="hero">
+    <div class="overlay"></div>
+    <nav class="navbar">
+      <h1 class="logo">🌍 La Panacea Viajes</h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="viajes.html">Viajes</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+    <div class="hero-content">
+      <h2>Conectá con el mundo, conectá con vos</h2>
+      <p>Viajes con alma. Descubrí destinos con propósito.</p>
+      <a href="viajes.html" class="btn">Explorar Viajes</a>
+    </div>
+  </header>
 </body>
 </html>
