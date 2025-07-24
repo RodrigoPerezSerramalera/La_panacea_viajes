@@ -361,3 +361,18 @@ form textarea {
   border-color: #00c6ff;
   box-shadow: 0 0 0 4px rgba(0,198,255,0.2);
 }
+
+.viaje-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.viaje-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 600px) {
+  .nav-links { display: none; } /* ocultá menú en pequeño */
+  .viajes-container {
+    grid-template-columns: 1fr;
+  }
+}
