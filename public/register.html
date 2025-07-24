@@ -8,17 +8,7 @@
 <body>
     <h1>Registro</h1>
 
-    {% with messages = get_flashed_messages() %}
-      {% if messages %}
-        <ul>
-          {% for message in messages %}
-            <li style="color: green;">{{ message }}</li>
-          {% endfor %}
-        </ul>
-      {% endif %}
-    {% endwith %}
-
-    <form method="POST">
+    <form>
         <label>Usuario:</label><br>
         <input type="text" name="username" required><br><br>
 
