@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contacto | La Panacea Viajes</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+</head>
+<body>
+  <header class="header-contacto">
+    <nav class="navbar">
+      <h1 class="logo">🌍 La Panacea Viajes</h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="viajes.html">Viajes</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+    <h2 class="contacto-title">Contáctanos</h2>
+  </header>
+
+  <main>
+    <section class="form-section">
+      <form>
+        <label for="nombre">Nombre completo</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre..." required>
+
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" name="email" placeholder="tucorreo@email.com" required>
+
+        <label for="telefono">Teléfono</label>
+        <input type="tel" id="telefono" name="telefono" placeholder="Ej: +54 9 11 1234-5678">
+
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" placeholder="Contanos qué necesitás..." required></textarea>
+
+        <button type="submit" class="btn">Enviar mensaje</button>
+      </form>
+    </section>
+  </main>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('form');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault(); // Evita que se recargue la página
+
+      const nombre = document.getElementById('nombre').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const mensaje = document.getElementById('mensaje').value.trim();
+
+      if (nombre === '' || email === '' || mensaje === '') {
+        alert('Por favor, completá todos los campos obligatorios.');
+        return;
+      }
+
+      // Si todo está bien, mostrar mensaje de éxito
+      alert('✅ ¡Gracias por tu mensaje! Nos contactaremos pronto.');
+
+      form.reset(); // Limpia los campos
+    });
+  });
+</script>
+
+</body>
+</html>
