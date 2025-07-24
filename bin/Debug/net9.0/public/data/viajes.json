@@ -1,0 +1,17 @@
+[
+  
+    {
+  "destino": "Machu Picchu",
+  "descripcion": "Una experiencia espiritual en las alturas del Perú.",
+  "precio": "$1.200 USD",
+  "imagen": "https://www.perurail.com/wp-content/uploads/2022/06/banner-machu-picchu-1024x576.jpg"
+},
+
+  {
+    "destino": "Islas Maldivas",
+    "descripcion": "Relajación total en playas paradisíacas.",
+    "precio": "$3.500 USD",
+    "imagen": "https://www.lanacion.com.py/resizer/v2/https%3A%2F%2Fcloudfront-us-east-1.images.arcpublishing.com%2Flanacionpy%2FYC343SOFSRAG5FPLPMKLQJL37U.jpg?auth=b0ec0abf6dad87ac04da1ba9d1bf9eb4fecdfba6b7c0d3ac2277630318e64f17&width=1200&height=630&smart=true"
+  }
+]
+
