@@ -1,25 +1,27 @@
 const express = require('express');
 const path = require('path');
 const cors = require('cors');
-const { Pool } = require('pg'); // PostgreSQL
-const bodyParser = require('body-parser');
+const { Pool } = require('pg');
 
-const app = express();
-app.use(cors());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
-
-// Conexión a PostgreSQL
+// Configuración de conexión a PostgreSQL
 const pool = new Pool({
   user: 'postgres',
   host: 'localhost',
-  database: 'postgres',
+  database: 'panacea',
   password: '0712',
   port: 5432,
 });
 
-// Ruta para el formulario de contacto
-app.post('/contacto', async (req, res) => {
+const app = express();
+app.use(cors());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+// Archivos estáticos
+app.use(express.static(path.join(__dirname, 'public')));
+
+// 📩 Ruta POST para guardar datos del formulario de contacto
+app.post('/api/contacto', async (req, res) => {
   const { nombre, email, telefono, mensaje } = req.body;
 
   try {
@@ -27,18 +29,14 @@ app.post('/contacto', async (req, res) => {
       'INSERT INTO contacto (nombre, email, telefono, mensaje) VALUES ($1, $2, $3, $4)',
       [nombre, email, telefono, mensaje]
     );
-    res.send(`
-      <h2>✅ ¡Gracias por tu mensaje!</h2>
-      <p>Nos contactaremos pronto.</p>
-      <a href="/">Volver al inicio</a>
-    `);
-  } catch (error) {
-    console.error('Error al guardar mensaje:', error);
-    res.status(500).send('❌ Ocurrió un error al enviar tu mensaje.');
+    res.status(200).json({ mensaje: 'Mensaje recibido y guardado correctamente.' });
+  } catch (err) {
+    console.error('Error al insertar en la base de datos:', err);
+    res.status(500).json({ error: 'Error al guardar el mensaje.' });
   }
 });
 
-// Rutas para tus otras páginas
+// 🌐 Rutas de páginas HTML
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'home.html'));
 });
@@ -52,6 +50,7 @@ app.get('/nosotros', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'nosotros.html'));
 });
 
+// 🚀 Iniciar servidor
 app.listen(3000, () => {
   console.log('Servidor corriendo en http://localhost:3000');
 });

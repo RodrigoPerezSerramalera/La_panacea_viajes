@@ -39,7 +39,8 @@
       </form>
     </section>
   </main>
-  <script>
+
+<script>
   document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('form');
 
@@ -48,20 +49,37 @@
 
       const nombre = document.getElementById('nombre').value.trim();
       const email = document.getElementById('email').value.trim();
+      const telefono = document.getElementById('telefono').value.trim();
       const mensaje = document.getElementById('mensaje').value.trim();
 
       if (nombre === '' || email === '' || mensaje === '') {
         alert('Por favor, completá todos los campos obligatorios.');
         return;
       }
-
-      // Si todo está bien, mostrar mensaje de éxito
-      alert('✅ ¡Gracias por tu mensaje! Nos contactaremos pronto.');
-
-      form.reset(); // Limpia los campos
+      // Enviar datos al backend (Express + PostgreSQL)
+      fetch('/api/contacto', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ nombre, email, telefono, mensaje }),
+      })
+      .then(response => {
+        if (!response.ok) throw new Error('Error al enviar el formulario');
+        return response.json();
+      })
+      .then(data => {
+        alert('✅ ¡Gracias por tu mensaje!');
+        form.reset(); // Limpia el formulario
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('❌ Ocurrió un error al enviar tu mensaje.');
+      });
     });
   });
 </script>
+
 
 </body>
 </html>
