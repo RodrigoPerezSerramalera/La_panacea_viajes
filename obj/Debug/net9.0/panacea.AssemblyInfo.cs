@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("panacea")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+720a034e1b32e741798d216cc8e896fcd4f0956c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f3cc028234d07ddab284b83c4cb8f410ce5e6a2c")]
 [assembly: System.Reflection.AssemblyProductAttribute("panacea")]
 [assembly: System.Reflection.AssemblyTitleAttribute("panacea")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

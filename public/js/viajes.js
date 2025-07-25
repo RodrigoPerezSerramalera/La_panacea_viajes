@@ -1,9 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
-  fetch('/data/viajes.json')
-    .then(response => response.json())
-    .then(data => mostrarViajes(data))
-    .catch(error => console.error('Error al cargar los viajes:', error));
-});
+document.addEventListener('DOMContentLoaded', () => { getViajes();});
 
 function mostrarViajes(viajes) {
   const container = document.getElementById('viajes-container');
@@ -42,25 +37,38 @@ function mostrarModal(viaje) {
   `).join('');
 
   modal.innerHTML = `
-    <div class="modal-content glass">
-      <span class="close-modal">&times;</span>
-      <h2>${viaje.destino}</h2>
-      <p><strong>Salida:</strong> ${viaje.fecha_salida} | <strong>Regreso:</strong> ${viaje.fecha_vuelta}</p>
+  <div class="modal-content glass viaje-modal-card">
+    <span class="close-modal">&times;</span>
+    
+    <h2 class="modal-title">${viaje.destino}</h2>
 
-      <p><strong>Incluye:</strong></p>
-      <ul>${viaje.incluye.map(item => `<li>${item}</li>`).join('')}</ul>
-
-      <p><strong>Itinerario:</strong></p>
-      <ul>${viaje.itinerario.map(dia => `<li>${dia}</li>`).join('')}</ul>
-
-      <div class="carousel">
-        ${fotosCarrusel}
-        <button class="carousel-btn prev">&lt;</button>
-        <button class="carousel-btn next">&gt;</button>
-      </div>
-
-      <button class="btn-reservar">Reservar</button>
+    <div class="modal-fechas">
+      <p><strong>📅 Salida:</strong> ${toStringDateDDMMYYY(viaje.fecha_salida)}</p>
+      <p><strong>🧳 Regreso:</strong> ${toStringDateDDMMYYY(viaje.fecha_vuelta)}</p>
     </div>
+
+    <div class="modal-section">
+      <h3>✅ Incluye</h3>
+      <ul class="modal-list">
+        ${viaje.incluye.map(item => `<li>${item}</li>`).join('')}
+      </ul>
+    </div>
+
+    <div class="modal-section">
+      <h3>📌 Itinerario</h3>
+      <ul class="modal-list">
+        ${viaje.itinerario.map(dia => `<li>${dia}</li>`).join('')}
+      </ul>
+    </div>
+
+    <div class="carousel">
+      ${fotosCarrusel}
+      <button class="carousel-btn prev">&lt;</button>
+      <button class="carousel-btn next">&gt;</button>
+    </div>
+
+    <button class="btn-reservar" data-id="${viaje.id_viaje}">Reservar</button>
+  </div>
   `;
 
   document.body.appendChild(modal);
@@ -90,9 +98,26 @@ function mostrarModal(viaje) {
 
   // Reservar
   modal.querySelector('.btn-reservar').addEventListener('click', () => {
-    alert(`Gracias por tu interés en ${viaje.destino}. Pronto te contactaremos.`);
+    window.location.href = '/reserva.html?id=' + viaje.id_viaje;
     modal.remove();
   });
 }
 
-
+function getViajes(){
+  fetch('/api/viajes', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(response => {
+      if (!response.ok) throw new Error('Error al obtener los viajes');
+      return response.json();
+    })
+    .then(data => {
+      mostrarViajes(data);
+    })
+    .catch(error => {
+      console.error('❌ Error al obtener los viajes:', error);
+    });
+}
