@@ -11,31 +11,31 @@
     <nav class="navbar">
       <h1 class="logo">🌍 La Panacea Viajes</h1>
       <ul class="nav-links">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="viajes.html">Viajes</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-        <li><a href="login.html">Login</a></li>
-      </ul>
+  <li><a href="index.html">Inicio</a></li>
+  <li><a href="viajes.html">Viajes</a></li>
+  <li><a href="contacto.html">Contacto</a></li>
+  <li><a href="nosotros.html">Sobre Nosotros</a></li>
+</ul>
     </nav>
     <h2 class="contacto-title">Contáctanos</h2>
   </header>
 
   <main>
     <section class="form-section">
-      <form>
-        <label for="nombre">Nombre completo</label>
-        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre..." required>
+        <form action="/contacto" method="POST">
+          <label for="nombre">Nombre completo</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre..." required>
 
-        <label for="email">Correo electrónico</label>
-        <input type="email" id="email" name="email" placeholder="tucorreo@email.com" required>
+         <label for="email">Correo electrónico</label>
+          <input type="email" id="email" name="email" placeholder="tucorreo@email.com" required>
 
-        <label for="telefono">Teléfono</label>
-        <input type="tel" id="telefono" name="telefono" placeholder="Ej: +54 9 11 1234-5678">
+          <label for="telefono">Teléfono</label>
+          <input type="tel" id="telefono" name="telefono" placeholder="Ej: +54 9 11 1234-5678">
 
-        <label for="mensaje">Mensaje</label>
-        <textarea id="mensaje" name="mensaje" placeholder="Contanos qué necesitás..." required></textarea>
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" placeholder="Contanos qué necesitás..." required></textarea>
 
-        <button type="submit" class="btn">Enviar mensaje</button>
+          <button type="submit" class="btn">Enviar mensaje</button>
       </form>
     </section>
   </main>
